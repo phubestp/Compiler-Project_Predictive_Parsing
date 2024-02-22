@@ -16,7 +16,7 @@ parsing_stack = '$' + list(parsing_table.keys())[0] # put initial grammar
 parsing_stack = [*parsing_stack] # convert string to list
 
 top = len(parsing_stack) - 1
-# following algorithm, x is top of parsing_stack and a is the first input symbol
+# following algorithm, x is the top of parsing_stack and a are the first input symbol
 x = parsing_stack[top]
 a = input_string[0]
 
@@ -28,7 +28,7 @@ while x != '$':
     # row formatting
     d = ''.join(parsing_stack) + "\t\t" + ''.join(input_string) + "\t"
 
-    # if top of parsing_stack and input is match, pop both from stacks
+    # if the top of parsing_stack and input is matched, pop both from stacks
     if x == a:
         print(d + "match")
         parsing_stack.pop(top)
@@ -46,7 +46,7 @@ while x != '$':
         p = [*p] # convert string to list
         p.reverse()
         parsing_stack.pop(top)
-        parsing_stack += p # put reverse produciton
+        parsing_stack += p # put reverse production
         if 'ε' in parsing_stack:
             parsing_stack.remove('ε')
 
