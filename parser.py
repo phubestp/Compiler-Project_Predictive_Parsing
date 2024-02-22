@@ -39,7 +39,7 @@ while x != '$':
         print("--Error--")
         break
 
-    # if it have production M[x,a], put reverse production to the parsing stack
+    # if it has production M[x,a], put reverse production to the parsing stack
     elif parsing_table[x][a] is not None:
         print(d + parsing_table[x][a])
         p = parsing_table[x][a].split('->')[1] # split -> from production
